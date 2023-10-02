@@ -8,14 +8,6 @@ Everyone has a diary. Mine happens to be here.
 
 ## index.php
 
-Standard landing page.
-
-## preface.php
-
-An explantion as to how this came into being
-
-## diary.php
-
 A diary, in [Madly, Deeply](https://www.amazon.com/dp/1250847958) [format](https://www.theguardian.com/film/2022/sep/24/alan-rickmans-secret-showbiz-diaries-harry-potter).
 
 ```
@@ -26,11 +18,6 @@ A diary, in [Madly, Deeply](https://www.amazon.com/dp/1250847958) [format](https
 24 August
 Around the pool and feeling a bit nothing about HP which really disturbs me – or is it because I’m reading Martin Amis’s Experience which charts A Life …
 ```
-
-# Usage
-
-- configure.php to set up variables
-- edit preface.php to give your explanation/viewpoint
 
 # mysql
 

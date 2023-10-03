@@ -12,7 +12,7 @@ if (!is_null($config['password_to_post'])) {
 }
 ?>
 	<div>
-		<button id="shoot_the_moon" class="btn btn-primary">Scratch a page...</button>
+		<button id="shoot_the_moon" class="btn btn-primary" onclick="write_to_diary();">Scratch a page...</button>
 	</div>
 </div>
 <div>

@@ -26,8 +26,7 @@ Creating a table that supports emojis and special characters with advice from [s
 ```
 CREATE TABLE `diary` (
    `pk` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-   `entry_date` DATE NOT NULL,
-   `entry_time` TIME NOT NULL,
+   `entry_time` DATETIME NOT NULL,
    `entry` TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NULL,
    PRIMARY KEY (`pk`)
 ) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_bin;

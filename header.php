@@ -1,5 +1,4 @@
 <?php
-include('configure.php');
 include('api.php');
 /**
  * A header for each page. Should include css/java
@@ -14,11 +13,22 @@ include('api.php');
 		<title>
 			<?php echo $config['title']; ?>
 		</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<style>
 
 		</style>
 		<script>
-
+function write_to_diary() {
+	var diary_post = 'dear_diary=' + encodeURIComponent(document.getElementById('dear_diary').value);
+	if (document.getElementById('password_to_post')) {
+		diary_post = diary_post + '&password_to_post=' + encodeURIComponent(document.getElementById('password_to_post').value);
+	}
+	let xhr = new XMLHttpRequest();
+	xhr.open('POST', 'index.php', false); /* sync right now */
+	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	xhr.send(diary_post);
+	location.reload();
+}
 		</script>
 	</head>
 	<body>

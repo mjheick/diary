@@ -18,6 +18,7 @@ $config = [
 	],
 	'diary_timezone' => 'America/New_York',
 	'password_to_post' => 'derp',
-	'diary_days_per_page' => 0,
+	'diary_entries_per_page' => 0,
 	'title' => 'I Envy You, Alan Rickman / Diary of Matthew Heick',
 ];
+$month_name = [null, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];

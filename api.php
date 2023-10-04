@@ -23,7 +23,7 @@ if (strlen($dear_diary) > 0) {
 			error_log('diary/api.php: could not connect to mysql [' . $e->getMessage() . ']');
 		}
 		if ($link !== false) {
-			$query = 'INSERT INTO ' . $mysql['table'] . ' (`entry_time`, `entry`) VALUES (NOW(), "' . mysqli_real_escape_string($link, $dear_diary) . '")';
+			$query = 'INSERT INTO `' . $mysql['table'] . '` (`entry_time`, `entry`) VALUES (NOW(), "' . mysqli_real_escape_string($link, $dear_diary) . '")';
 			$ret = mysqli_query($link, $query);
 			if ($ret === false) {
 				error_log('diary/api.php: query failed to insert data into table');

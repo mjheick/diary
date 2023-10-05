@@ -22,3 +22,7 @@ $config = [
 	'title' => 'I Envy You, Alan Rickman / Diary of Matthew Heick',
 ];
 $month_name = [null, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+/* in case anything in configs needs to be overridden but not committed on the main branch */
+if (file_exists('overrides.php')) {
+	include('overrides.php');
+}

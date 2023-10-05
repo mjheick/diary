@@ -32,3 +32,7 @@ CREATE TABLE `diary` (
 ) ENGINE = InnoDB CHARSET=utf8mb4 COLLATE utf8mb4_bin;
 ```
 
+# todo
+
+- implement diary_entries_per_page configuration option. currently diary dumps all to screen
+- Subscribed/notify email hook for new entries, crossposting to wordpress?

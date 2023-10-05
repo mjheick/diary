@@ -1,5 +1,6 @@
 <?php
 include('configure.php');
+date_default_timezone_set($config['diary_timezone']);
 /**
  * For inbound POST requests this handles them
  * This also does a bit of security as well.
@@ -23,7 +24,8 @@ if (strlen($dear_diary) > 0) {
 			error_log('diary/api.php: could not connect to mysql [' . $e->getMessage() . ']');
 		}
 		if ($link !== false) {
-			$query = 'INSERT INTO `' . $mysql['table'] . '` (`entry_time`, `entry`) VALUES (NOW(), "' . mysqli_real_escape_string($link, $dear_diary) . '")';
+			$timezone_offset = date("P"); /* +xx:xx format for SQL math, assuming sql is storing in UTC */
+			$query = 'INSERT INTO `' . $mysql['table'] . '` (`entry_time`, `entry`) VALUES (CONVERT_TZ(NOW(), @@session.time_zone, "' . $timezone_offset . '"), "' . mysqli_real_escape_string($link, $dear_diary) . '")';
 			$ret = mysqli_query($link, $query);
 			if ($ret === false) {
 				error_log('diary/api.php: query failed to insert data into table');
